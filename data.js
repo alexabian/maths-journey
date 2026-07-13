@@ -2,7 +2,7 @@ export const worlds = [
   { id: 'village', name: 'Home Village', icon: '⌂', colour: 'moss', locked: false, description: 'A warm place to begin your journey.' },
   { id: 'forest', name: 'Number Forest', icon: '✦', colour: 'leaf', locked: false, description: 'Meet Professor Owl and explore numbers.' },
   { id: 'harbour', name: 'Measurement Harbour', icon: '◒', colour: 'sky', locked: false, description: 'Measure, compare and discover.' },
-  { id: 'tower', name: 'Time Tower', icon: '◷', colour: 'sun', locked: true, description: 'Coming soon: clocks and daily adventures.' }
+  { id: 'tower', name: 'Time Tower', icon: '◷', colour: 'sun', locked: false, description: 'Read clocks and plan daily adventures.' }
 ];
 
 export const lessons = [
@@ -61,6 +61,34 @@ export const lessons = [
       { prompt: 'The balance tips down on the apple side. What does that tell us?', visual: ['apple', '⚖️', '↓'], answer: 'apple', choices: ['apple', 'balloon', 'same'], hint: 'The lower side is heavier.' }
     ],
     review: { prompt: 'Which object would you expect to have the greatest mass?', visual: ['feather', '<', 'paper', '<', 'suitcase'], answer: 'suitcase', choices: ['feather', 'suitcase', 'paper'], hint: 'A suitcase is much heavier than a feather or paper.' }
+  },
+  {
+    id: 'clock-face', world: 'tower', title: 'The Clock Face', npc: 'Professor Owl', emoji: '🦉', skill: "Reading o'clock and half past",
+    teach: {
+      title: 'The hands tell a time story',
+      body: 'The short hand shows the hour. When the long hand points to 12, it is o’clock. When it points to 6, it is half past.',
+      visual: ['12', '🕒', '3', '🕕', '6']
+    },
+    questions: [
+      { prompt: 'The short hand is on 3 and the long hand is on 12. What time is it?', visual: ['🕒', '=', '?'], answer: '3:00', choices: ['3:00', '3:30', '12:03'], hint: 'The long hand on 12 means o’clock.' },
+      { prompt: 'The short hand is between 6 and 7. The long hand is on 6. What time is it?', visual: ['🕡', '=', '?'], answer: '6:30', choices: ['6:00', '6:30', '7:30'], hint: 'The long hand on 6 means half past.' },
+      { prompt: 'Which clock shows half past 4?', visual: ['4:30', '→', '🕟'], answer: '4:30', choices: ['4:00', '4:30', '5:30'], hint: 'Half past means 30 minutes after the hour.' }
+    ],
+    review: { prompt: 'The long hand points to 12. Which time could it show?', visual: ['🕘', '→', '?'], answer: '9:00', choices: ['9:00', '9:30', '12:09'], hint: 'Long hand on 12 means o’clock.' }
+  },
+  {
+    id: 'day-planner', world: 'tower', title: 'The Day Planner', npc: 'Professor Owl', emoji: '🦉', skill: 'Ordering events and comparing times',
+    teach: {
+      title: 'A day has a helpful order',
+      body: 'We can use times to put events in order. Earlier times happen first; later times happen afterwards.',
+      visual: ['9:00', '→', '12:00', '→', '3:00']
+    },
+    questions: [
+      { prompt: 'Which happens earlier?', visual: ['9:00', '<', '12:00'], answer: '9:00', choices: ['9:00', '12:00', 'same'], hint: 'The smaller hour comes first today.' },
+      { prompt: 'What time is one hour after 4:00?', visual: ['4:00', '+', '1 h', '=', '?'], answer: '5:00', choices: ['4:30', '5:00', '6:00'], hint: 'Count forward one whole hour.' },
+      { prompt: 'Which time is later?', visual: ['2:00', '<', '7:00'], answer: '7:00', choices: ['2:00', '7:00', 'same'], hint: 'The larger hour is later in the day.' }
+    ],
+    review: { prompt: 'Put these times in order from earliest to latest.', visual: ['8:00', '→', '1:00', '→', '6:00'], answer: '8:00, 1:00, 6:00', choices: ['8:00, 1:00, 6:00', '1:00, 6:00, 8:00', '6:00, 8:00, 1:00'], hint: 'Use the story of a school day: morning, lunch, afternoon.' }
   }
 ];
 
